@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+
     public Rigidbody2D rb;
     public Camera cameraView;
-    public GameObject bulletImpact;
 
     public float moveSpeed = 5f;
     private Vector2 keyInput;
@@ -14,7 +15,10 @@ public class PlayerController : MonoBehaviour
 
     public float mouseSensitivity = 1f;
 
-    public int currentAmmo;
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
@@ -35,26 +39,6 @@ public class PlayerController : MonoBehaviour
 
         cameraView.transform.localRotation = Quaternion.Euler(cameraView.transform.localRotation.eulerAngles + new Vector3(0f, mouseInput.y, 0f));
         
-        // Shooting
-        if (Input.GetMouseButtonDown(0) && currentAmmo > 0)
-        {
-            Shoot();
-        }
     }
 
-    void Shoot()
-    {
-        Ray ray = cameraView.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
-        {
-            Debug.Log("Has dado en el blanco! - Objetivo: " + hit.transform.name);
-            Instantiate(bulletImpact, hit.point, transform.rotation);
-        }
-        else
-        {
-            Debug.Log("Has fallado!");
-        }
-        currentAmmo--;
-    }
 }
