@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4209700327930580139}
   - component: {fileID: 4046572132188445014}
   - component: {fileID: 3493820645755266942}
-  - component: {fileID: -1001974042448107952}
+  - component: {fileID: 6802544113453818459}
   m_Layer: 0
   m_Name: Bullet Impact
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4209700327930580139
 SpriteRenderer:
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 0.5
---- !u!114 &-1001974042448107952
+--- !u!114 &6802544113453818459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
