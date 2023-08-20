@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Shooting : MonoBehaviour
 {
     public int currentAmmo;
+    public int damage = 1;
     public GameObject bulletImpact;
     public Camera cameraView;
     public Animator anim;
@@ -38,6 +39,8 @@ public class Shooting : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
+            EnemyCombat enemy = hit.transform.GetComponentInParent<EnemyCombat>();
+            enemy.TakeDamage(damage);
             Debug.Log("Has dado en el blanco! - Objetivo: " + hit.transform.name);
             Instantiate(bulletImpact, hit.point, transform.rotation);
         }
