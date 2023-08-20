@@ -6,7 +6,6 @@ using static UnityEngine.GraphicsBuffer;
 public class EnemyController : MonoBehaviour
 {
 
-    public Transform target;
     public float speed = 10f;
 
     // Start is called before the first frame update
@@ -19,6 +18,8 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         var step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        Vector3 player = PlayerController.instance.transform.position;
+
+        transform.position = Vector3.MoveTowards(transform.position, player, step);
     }
 }
