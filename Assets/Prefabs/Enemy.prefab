@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4895813582692529881}
   - component: {fileID: 2295722223247133868}
   - component: {fileID: 4589954175007103062}
+  - component: {fileID: 8523853321274933600}
   m_Layer: 0
   m_Name: Enemy Sprite
   m_TagString: Untagged
@@ -97,6 +98,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8add7b9c1290d4d4385d70f6c085f8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &8523853321274933600
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7552412753089644961}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5807143
+  m_Center: {x: 0, y: 0.55857146, z: 0}
 --- !u!1 &9209530278493102231
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +130,7 @@ GameObject:
   - component: {fileID: 24162019671257142}
   - component: {fileID: 7159969242936578595}
   - component: {fileID: 6866764700673701167}
+  - component: {fileID: -8211349550491950813}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -129,7 +152,7 @@ Transform:
   m_Children:
   - {fileID: 4895813582692529881}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &7159969242936578595
 CircleCollider2D:
@@ -178,5 +201,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3166770d0029a3c4f8019afbccccd307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   speed: 1
+--- !u!114 &-8211349550491950813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9209530278493102231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c02e5b9b626d354da6052c0e358fe4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 50
