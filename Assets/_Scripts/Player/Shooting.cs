@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Shooting : MonoBehaviour
 {
+    public int maxAmmo;
     public int currentAmmo;
     public int damage = 1;
     public GameObject bulletImpact;
@@ -20,6 +21,7 @@ public class Shooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentAmmo = maxAmmo;
         txt_ammo.text = currentAmmo.ToString();
     }
 
@@ -57,4 +59,15 @@ public class Shooting : MonoBehaviour
     {
         txt_ammo.text = currentAmmo.ToString();
     }
+
+    public void AddAmmo(int bullets)
+    {
+        currentAmmo += bullets;
+    }
+
+    public void FillAmmo()
+    {
+        currentAmmo = maxAmmo;
+    }
+
 }

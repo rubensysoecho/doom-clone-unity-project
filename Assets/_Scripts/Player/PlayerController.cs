@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public float maxJetpackFuel = 1f;
     private float jetpackFuel;
+    public float jetpackPower = 1f;
     private Vector2 keyInput;
     private Vector2 mouseInput;
 
@@ -48,13 +49,11 @@ public class PlayerController : MonoBehaviour
             jetpackFuel = Mathf.Clamp(jetpackFuel, 0, maxJetpackFuel);
             Debug.Log(jetpackFuel);
         }
-
     }
 
     private void Jetpack()
     {
-        Vector3 direction = new Vector3(0, 0, -1);
-        rb.AddForce(direction, ForceMode2D.Impulse);
+        transform.Translate(-Vector3.forward * (jetpackPower / 10));
     }
 
 }
